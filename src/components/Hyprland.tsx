@@ -24,21 +24,21 @@ export function Workspaces() {
       "hyprlandActiveWorkspace",
       (e: { workspaceId: number }) => {
         setActiveWorkspace(e.workspaceId);
-      }
+      },
     );
     window.addEventListener(
       "hyprlandCreateWorkspace",
       (e: { workspaceId: number }) => {
         setWorkspaces((prev) =>
-          [...new Set([...prev, e.workspaceId])].sort((a, b) => a - b)
+          [...new Set([...prev, e.workspaceId])].sort((a, b) => a - b),
         );
-      }
+      },
     );
     window.addEventListener(
       "hyprlandDestroyWorkspace",
       (e: { workspaceId: number }) => {
         setWorkspaces((prev) => prev.filter((id) => id !== e.workspaceId));
-      }
+      },
     );
   }, []);
 
@@ -47,11 +47,11 @@ export function Workspaces() {
       onWheel={(e) => {
         if (e.deltaY > 0) {
           return window.fabric.bridge.hyprlandSendCommand(
-            "/dispatch workspace e-1"
+            "/dispatch workspace e-1",
           );
         }
         return window.fabric.bridge.hyprlandSendCommand(
-          "/dispatch workspace e+1"
+          "/dispatch workspace e+1",
         );
       }}
       className="workspaces flex flex-row"
@@ -64,7 +64,7 @@ export function Workspaces() {
           }`}
           onClick={() =>
             window.fabric.bridge.hyprlandSendCommand(
-              `/dispatch workspace ${workspaceId}`
+              `/dispatch workspace ${workspaceId}`,
             )
           }
         >
@@ -108,7 +108,7 @@ export const Language: React.FC<{
             setLanguage(formatter(kb.active_keymap));
             break;
           }
-        }
+        },
       )
       .catch(() => {
         // shhh

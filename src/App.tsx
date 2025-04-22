@@ -1,4 +1,3 @@
-import "@fontsource/jetbrains-mono";
 import { useEffect } from "react";
 import PlayerStatusButton from "./components/PlayerStatusButton";
 import {
@@ -7,12 +6,7 @@ import {
 } from "./components/PlayerControlButtons";
 import { PlayerProgress } from "./components/PlayerProgress";
 import { Language, Workspaces } from "./components/Hyprland";
-import {
-  LucideKeyboard,
-  LucideWifi,
-  LucideLayoutTemplate,
-  LucideBird,
-} from "lucide-react";
+import { LucideWifi, LucideLayoutTemplate, LucideBird } from "lucide-react";
 import { PlayerCover } from "./components/PlayerCover";
 import { PlayerMetadata } from "./components/PlayerMetadata";
 import { Notifications } from "./components/Notifications";
@@ -31,7 +25,7 @@ export default function App() {
         .then((scheme: PywalColorScheme["colors"]) =>
           Object.entries(scheme).forEach(([name, value]) => {
             document.documentElement.style.setProperty("--" + name, value);
-          })
+          }),
         );
       return;
     }
