@@ -3,6 +3,7 @@ import time
 import json
 import cairo
 import psutil
+import base64
 from fabric import Application
 from fabric.audio import Audio, AudioStream
 from fabric.hyprland import Hyprland
@@ -30,6 +31,31 @@ class WebShell(WebView):
         self._hyprland = Hyprland()
         self._player = Playerctl.Player(player_name="spotify")
 
+        def on_notification_added(_, notification_id: int):
+            notification = self._notifications.get_notification_from_id(notification_id)
+            if not notification:
+                return
+            serialized_notification = notification.serialize()
+
+            try:
+                if image_file := serialized_notification.get("image-file", None):
+                    with open(image_file, "rb") as f:
+                        serialized_notification["image-pixmap"] = (
+                            -1,
+                            -1,
+                            -1,
+                            True,
+                            -1,
+                            -1,
+                            base64.b64encode(f.read()).decode(),
+                        )
+            except FileNotFoundError:
+                pass  # not a big deal...
+
+            self.fire_event("notificationAdded", notification=serialized_notification)
+
+        self._notifications = Notifications(on_notification_added=on_notification_added)
+
         def on_volume_changed(speaker: AudioStream, *_):
             return self.fire_event("audioVolumeChanged", volume=speaker.volume)
 
@@ -40,11 +66,6 @@ class WebShell(WebView):
                 spk.connect("notify::volume", on_volume_changed),
                 on_volume_changed(spk),
             ),
-        )
-        self._notifications = Notifications(
-            on_notification_added=lambda _, nid: None
-            if not (notif := self._notifications.get_notification_from_id(nid))
-            else self.fire_event("notificationAdded", notification=notif.serialize())  # type: ignore
         )
 
         bulk_connect(
@@ -153,6 +174,7 @@ class WebShell(WebView):
     def do_set_input_regions(
         self, input_regions: list[dict[str, int]], visualize: bool = False
     ):
+        # FIXME: improve parent fetching and input regions setting
         self.get_parent().input_shape_combine_region(
             cairo.Region(
                 [

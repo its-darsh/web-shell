@@ -53,7 +53,7 @@ const NotificationItem: React.FC<{
                 src={
                   notification["image-pixmap"] !== null
                     ? `data:image/png;base64,${notification["image-pixmap"][6]}`
-                    : notification["image-file"] || ""
+                    : "file://" + notification["image-file"] || ""
                 }
                 alt="notification"
               />
