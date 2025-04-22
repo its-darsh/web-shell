@@ -1,0 +1,90 @@
+@import "tailwindcss";
+@tailwind utilities;
+
+:root {
+  --color0: #010107;
+  --color1: #1C1691;
+  --color2: #221D8F;
+  --color3: #2A2591;
+  --color4: #1F18A2;
+  --color5: #221BB3;
+  --color6: #251DC3;
+  --color7: #8a86db;
+  --color8: #605d99;
+  --color9: #1C1691;
+  --color10: #221D8F;
+  --color11: #2A2591;
+  --color12: #1F18A2;
+  --color13: #221BB3;
+  --color14: #251DC3;
+  --color15: #8a86db;
+
+  --background: var(--color0);
+  --foreground: var(--color15);
+
+
+  color: var(--foreground);
+  color-scheme: light dark;
+  font-family: "Readex Pro";
+  background-color: transparent !important;
+  user-select: none !important;
+  -webkit-user-select: none !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:body {
+  background-color: transparent !important;
+  user-select: none !important;
+}
+
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--color6);
+  --color-secondary: var(--color8);
+
+  --color-0: var(--color0);
+  --color-1: var(--color1);
+  --color-2: var(--color2);
+  --color-3: var(--color3);
+  --color-4: var(--color4);
+  --color-5: var(--color5);
+  --color-6: var(--color6);
+  --color-7: var(--color7);
+  --color-8: var(--color8);
+  --color-9: var(--color9);
+  --color-10: var(--color10);
+  --color-11: var(--color11);
+  --color-12: var(--color12);
+  --color-13: var(--color13);
+  --color-14: var(--color14);
+  --color-15: var(--color15);
+
+  --font-mono: "JetBrains Mono"
+}
+
+*:focus {
+  outline: 0 !important;
+  border: 0;
+}
+
+img {
+  background-color: transparent !important;
+  user-select: none !important;
+  -webkit-user-select: none !important;
+  -webkit-user-drag: none !important;
+  -khtml-user-drag: none !important;
+  -moz-user-drag: none !important;
+  -o-user-drag: none !important;
+}
+
+.notifications.overflow {
+  mask-image:
+    linear-gradient(0deg, rgba(255, 255, 255, 0) 7%, rgba(255, 255, 255, 1) 22%, rgba(255, 255, 255, 1) 100%),
+    radial-gradient(circle at center, black 1px, transparent 0),
+    radial-gradient(circle at center, black 1px, transparent 0);
+  mask-size: 100% 100%, 0.3rem 0.3rem, 0.3rem 0.3rem;
+  mask-position: 0 0, 0 0, 0.5rem 0.5rem;
+  mask-composite: add;
+}

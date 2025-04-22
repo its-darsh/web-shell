@@ -1,0 +1,42 @@
+{
+  "name": "web-shell",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint .",
+    "preview": "vite preview",
+    "prettify": "prettier --write \"./**/*.{js,jsx,mjs,cjs,ts,tsx,json}\""
+  },
+  "dependencies": {
+    "@fontsource/jetbrains-mono": "^5.2.5",
+    "@gsap/react": "^2.1.2",
+    "@lottiefiles/react-lottie-player": "^3.6.0",
+    "@phosphor-icons/react": "^2.1.7",
+    "@tailwindcss/vite": "^4.1.3",
+    "lottie-interactive": "^1.3.2",
+    "lottie-react": "^2.4.1",
+    "lucide-react": "^0.487.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-flip-numbers": "^3.0.9",
+    "styled-components": "^6.1.17",
+    "tailwindcss": "^4.1.3",
+    "vite-plugin-ssr": "^0.4.142"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.21.0",
+    "@types/react": "^19.0.10",
+    "@types/react-dom": "^19.0.4",
+    "@vitejs/plugin-react": "^4.3.4",
+    "eslint": "^9.21.0",
+    "eslint-plugin-react-hooks": "^5.1.0",
+    "eslint-plugin-react-refresh": "^0.4.19",
+    "globals": "^15.15.0",
+    "typescript": "~5.7.2",
+    "typescript-eslint": "^8.24.1",
+    "vite": "^6.2.0"
+  }
+}
