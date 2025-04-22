@@ -29,14 +29,9 @@ export function DateTime() {
       {hours}
       <span className="m-1.5">
         {amPm === "PM" ? (
-          <LucideMoon className="stroke-2" size={20} />
+          <LucideMoon className="stroke-2 stroke-primary" size={20} />
         ) : (
-          <LucideSun
-            // uncomment for day animation
-            // className="stroke-2 animate-spin"
-            // style={{ animationDuration: "18s" }}
-            size={20}
-          />
+          <LucideSun className="stroke-2 stroke-primary" size={20} />
         )}
       </span>
       {minutes}
