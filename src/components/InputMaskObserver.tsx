@@ -52,7 +52,7 @@ export const InputMaskObserver: React.FC<{ children: ReactNode }> = ({
       subtree: true,
     });
 
-    const id = setInterval(notifyInputMask, 800);
+    const id = setInterval(notifyInputMask, 500);
     notifyInputMask();
 
     return () => {

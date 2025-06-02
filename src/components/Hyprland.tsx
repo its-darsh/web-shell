@@ -60,7 +60,7 @@ export function Workspaces() {
         <div
           key={workspaceId}
           className={`workspace-item text-center rounded-[2px] border-solid border border-primary transition-all m-[0.1rem] w-7 cursor-pointer ${
-            workspaceId === activeWorkspace ? "bg-primary" : ""
+            workspaceId === activeWorkspace ? "bg-primary text-background" : ""
           }`}
           onClick={() =>
             window.fabric.bridge.hyprlandSendCommand(

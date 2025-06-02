@@ -81,8 +81,8 @@ img {
 
 .notifications.overflow {
   mask-image:
-    linear-gradient(0deg, rgba(255, 255, 255, 0) 7%, rgba(255, 255, 255, 1) 22%, rgba(255, 255, 255, 1) 100%),
-    radial-gradient(circle at center, black 1px, transparent 0),
+  linear-gradient(0deg, rgba(255, 255, 255, 0) 7%, rgba(255, 255, 255, 1) 22%, rgba(255, 255, 255, 1) 100%),
+  radial-gradient(circle at center, black 1px, transparent 0),
     radial-gradient(circle at center, black 1px, transparent 0);
   mask-size: 100% 100%, 0.3rem 0.3rem, 0.3rem 0.3rem;
   mask-position: 0 0, 0 0, 0.5rem 0.5rem;

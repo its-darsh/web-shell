@@ -1,0 +1,4 @@
+fabric @ git+https://github.com/Fabric-Development/fabric
+pygobject-stubs
+pycairo
+psutil

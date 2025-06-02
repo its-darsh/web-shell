@@ -18,11 +18,18 @@ from gi.repository import Gdk, Playerctl
 # supress webview logs
 logger.disable("fabric.widgets.webview.webview")
 
+# depends on the config, usually...
+# 5173 for npm run dev
+# 4173 for npm run preview
+SERVER_PORT = 5173
+
 
 # wiki: https://wiki.ffpy.org/api/widgets/webview
 class WebShell(WebView):
     def __init__(self, **kwargs):
-        super().__init__(url="http://localhost:5173", open_bride=True, **kwargs)
+        super().__init__(
+            url=f"http://localhost:{SERVER_PORT}", open_bridge=True, **kwargs
+        )
         if not self.bridge:
             return
 
